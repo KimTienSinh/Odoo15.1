@@ -121,6 +121,7 @@
             'point_of_sale/static/src/js/Screens/ProductScreen/ProductsWidget.js',
             'point_of_sale/static/src/js/Screens/ReceiptScreen/WrappedProductNameLines.js',
             'point_of_sale/static/src/js/Screens/ReceiptScreen/OrderReceipt.js',
+            'point_of_sale/static/src/js/Screens/ReceiptScreen/OrderReceipt2.js',
             'point_of_sale/static/src/js/Screens/ReceiptScreen/ReceiptScreen.js',
             'point_of_sale/static/src/js/Screens/ScaleScreen/ScaleScreen.js',
             'point_of_sale/static/src/js/ChromeWidgets/CashierName.js',

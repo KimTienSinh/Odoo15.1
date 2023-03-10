@@ -17,7 +17,7 @@ odoo.define('point_of_sale.OrderlineCustomerNoteButton', function(require) {
 
             const { confirmed, payload: inputNote } = await this.showPopup('TextAreaPopup', {
                 startingValue: selectedOrderline.get_customer_note(),
-                title: this.env._t('Add Customer Note'),
+                title: this.env._t('Add Customer Note123321'),
             });
 
             if (confirmed) {

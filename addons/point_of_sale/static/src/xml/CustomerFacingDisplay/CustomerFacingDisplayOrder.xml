@@ -30,7 +30,7 @@
                     <!-- Order TOtal -->
                     <div class="pos-total">
                         <div>
-                            <span class="total-amount-formatting">TOTAL</span>
+                            <span class="total-amount-formatting">TOTAL5555</span>
                         </div>
                         <div>
                             <span class="pos_total-amount" t-esc="pos.format_currency(order and order.get_total_with_tax() || 0)"/>
