@@ -23,6 +23,28 @@ var round_pr = utils.round_precision;
 
 var exports = {};
 
+
+    // models.load_models([
+    //     {
+    //         model: 'management.product_hs',
+    //         fields: ['id_product', 'id_pos', 'hide_product_in_pos'],
+    //         domain: [['id_pos', '=', session.pos.config.id]],
+    //         loaded: function(records) {
+    //             session.pos.productHS = {};
+    //             for (const record of records) {
+    //                 session.pos.productHS[record.id_product[0]] = record;
+    //             }
+    //         },
+    //     },
+    // ]);
+
+    // const ManagementProductHS = models.PosModel.prototype.models.find(
+    //     model => model.model === 'management.product_hs'
+    // );
+    // ManagementProductHS.fields.product_id = fields.Many2one('product.product', {
+    //     string: 'Product',
+    //     domain: [['is_pos_product', '=', true]],
+    // });
 // The PosModel contains the Point Of Sale's representation of the backend.
 // Since the PoS must work in standalone ( Without connection to the server )
 // it must contains a representation of the server's PoS backend.

@@ -1,0 +1,108 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+<!--
+    <record model="ir.ui.view" id="management_product_hs.list">
+      <field name="name">management_product_hs list</field>
+      <field name="model">management_product_hs.management_product_hs</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="value"/>
+          <field name="value2"/>
+        </tree>
+      </field>
+    </record>
+-->
+
+    <!-- actions opening views on models -->
+<!--
+    <record model="ir.actions.act_window" id="management_product_hs.action_window">
+      <field name="name">management_product_hs window</field>
+      <field name="res_model">management_product_hs.management_product_hs</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+-->
+
+    <!-- server action to the one above -->
+<!--
+    <record model="ir.actions.server" id="management_product_hs.action_server">
+      <field name="name">management_product_hs server</field>
+      <field name="model_id" ref="model_management_product_hs_management_product_hs"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+-->
+
+    <!-- Top menu item -->
+<!--
+    <menuitem name="management_product_hs" id="management_product_hs.menu_root"/>
+-->
+    <!-- menu categories -->
+<!--
+    <menuitem name="Menu 1" id="management_product_hs.menu_1" parent="management_product_hs.menu_root"/>
+    <menuitem name="Menu 2" id="management_product_hs.menu_2" parent="management_product_hs.menu_root"/>
+-->
+    <!-- actions -->
+<!--
+    <menuitem name="List" id="management_product_hs.menu_1_list" parent="management_product_hs.menu_1"
+              action="management_product_hs.action_window"/>
+    <menuitem name="Server to list" id="management_product_hs" parent="management_product_hs.menu_2"
+              action="management_product_hs.action_server"/>
+-->
+
+   <!-- Define a new tree view for displaying the product-POS configuration records -->
+        <record id="view_management_product_hs_tree" model="ir.ui.view">
+            <field name="name">Product HS Tree View</field>
+            <field name="model">management.product_hs</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="id_product"/>
+                    <field name="id_pos"/>
+                    <field name="hide_product_in_pos" widget="boolean_toggle"/>
+                    <!-- <button name="toggle_hide_in_pos" string="Toggle Hide in Point of Sale" type="object"/> -->
+                </tree>
+            </field>
+        </record>
+
+        <!-- Define a new form view for editing individual product-POS configuration records -->
+        <record id="view_management_product_hs_form" model="ir.ui.view">
+            <field name="name">Product HS Form View</field>
+            <field name="model">management.product_hs</field>
+            <field name="arch" type="xml">
+                <form>
+                    <field name="id_product"/>
+                    <field name="id_pos"/>
+                    <field name="hide_product_in_pos"/>
+                </form>
+            </field>
+        </record>
+
+        <!-- Define a new action for opening the product-POS tree view -->
+        <record id="action_management_product_hs" model="ir.actions.act_window">
+            <field name="name">Product HS</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">management.product_hs</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{}</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Click the Create button to add a new product-POS configuration record.
+                </p>
+            </field>
+            <!-- <button name="toggle_hide_product_in_pos" string="Toggle Hide in Point of Sale" type="object"/> -->
+
+        </record>
+
+        <!-- Add a new menu item for accessing the product-POS management views -->
+        <menuitem id="menu_management_product_hs" name="Product HS"/>
+        <menuitem id="menu_management_product_hs_tree" name="Product HS" parent="menu_management_product_hs" action="action_management_product_hs"/>
+  
+  </data> 
+</odoo>

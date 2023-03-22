@@ -82,6 +82,8 @@ class ProductProduct(models.Model):
     _inherit = ['mail.thread', 'mail.activity.mixin']
     _order = 'priority desc, default_code, name, id'
 
+    lst_product_hs = fields.One2many('management.product_hs','id_product', required=True)
+            
     # price: total price, context dependent (partner, pricelist, quantity)
     price = fields.Float(
         'Price', compute='_compute_product_price',
