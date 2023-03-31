@@ -6,8 +6,20 @@ odoo.define('point_of_sale.ProductList', function(require) {
     // const Chrome = require('point_of_sale.Chrome');
     // const Gui = require('point_of_sale.Gui');
 
-    // const pos_model = require('point_of_sale.models');
-    // pos_model.load_fields("product.product", ["lst_product_hs"]);
+    const pos_model = require('point_of_sale.models');
+    pos_model.load_models({
+        model: 'management.product_hs',
+        fields: ['id', 'id_product', 'hide_product_in_pos'],
+        domain: function(self){ return [['id_pos', '=', self.env.pos.config.id],['hide_product_in_pos', '=', true]]; },
+        loaded: function(self, product_hs){
+            for(const hs of product_hs){
+                self.db.product_by_id[hs.id_product[0]].hide = hs.hide_product_in_pos;
+                console.log(self.db.product_by_id[hs.id_product[0]])
+            }
+        },
+    },{
+        after: 'product.product'
+    });
 
 
     class ProductList extends PosComponent {
