@@ -1,0 +1,7 @@
+<template>
+    <t t-name="cus_NumberPopup" t-inherit="point_of_sale.NumberPopup" t-inherit-mode="extension" owl="1">
+        <xpath expr="//div/Draggable/div" position="attributes">
+                <attribute name="style">height: 460px;</attribute>
+        </xpath>
+    </t>
+</template>
