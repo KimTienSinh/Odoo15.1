@@ -1,0 +1,7 @@
+<template>
+    <t t-name="cus_ClosePosPopup" t-inherit="point_of_sale.ClosePosPopup" t-inherit-mode="extension" owl="1">
+        <xpath expr="//td[hasclass('flex')]/input" position="replace">
+                <div class="pos-input" type="number" t-model.number="state.payments[defaultCashDetails.id].counted"/>
+        </xpath>
+    </t>
+</template>
